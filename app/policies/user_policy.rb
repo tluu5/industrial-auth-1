@@ -1,0 +1,3 @@
+def feed?
+  true
+end
