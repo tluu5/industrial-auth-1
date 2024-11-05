@@ -8,6 +8,7 @@ class FollowRequestsController < ApplicationController
 
   # GET /follow_requests/1 or /follow_requests/1.json
   def show
+    authorize(@follow_request)
   end
 
   # GET /follow_requests/new
@@ -22,6 +23,7 @@ class FollowRequestsController < ApplicationController
   # POST /follow_requests or /follow_requests.json
   def create
     @follow_request = FollowRequest.new(follow_request_params)
+    authorize(@follow_request)
     @follow_request.sender = current_user
 
     respond_to do |format|

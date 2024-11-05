@@ -10,12 +10,13 @@ class PhotosController < ApplicationController
 
   # GET /photos/1 or /photos/1.json
   def show
-    authorize @photo
+    authorize (@photo)
   end
 
   # GET /photos/new
   def new
     @photo = Photo.new
+    authorize (@photo)
   end
 
   # GET /photos/1/edit
